@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎂 欢迎来到Jelly的生日抽卡罐 🎂</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <!-- 音乐控制按钮 -->
+        <div class="music-control">
+            <button class="music-button" id="music-button" onclick="toggleMusic()">
+                <span id="music-icon">🎵</span>
+                <span id="music-text">播放音乐</span>
+            </button>
+        </div>
+
+        <!-- 头部标题 -->
+        <header class="header">
+            <h1 class="title">
+                <span class="title-line1">欢迎来到Jelly的</span>
+                <span class="title-line2">
+                    <span class="title-emoji">✨</span> 
+                    <span class="title-text">生日抽卡罐</span> 
+                    <span class="title-emoji">✨</span>
+                </span>
+            </h1>
+            <p class="subtitle">亲爱的朋友，来抽一张卡牌送给我吧～</p>
+            <div class="birthday-decorations">
+                <span class="balloon">🎈</span>
+                <span class="cake">🎂</span>
+                <span class="balloon">🎈</span>
+            </div>
+        </header>
+
+        <!-- 卡牌区域 -->
+        <main class="main-content">
+            <div class="card-container">
+                <div class="card" id="card">
+                    <div class="card-back">
+                        <div class="card-pattern"></div>
+                        <p>点击抽卡</p>
+                    </div>
+                    <div class="card-front" id="card-front">
+                        <div class="card-content" id="card-content">
+                            <!-- 卡牌内容将通过JavaScript动态填充 -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 抽卡按钮 -->
+            <button class="draw-button" id="draw-button" onclick="drawCard()">
+                <span class="button-text">🎴 抽取卡牌 🎴</span>
+                <div class="button-sparkle"></div>
+            </button>
+
+            <!-- 结果展示 -->
+            <div class="result-section" id="result-section">
+                <div class="result-card" id="result-card">
+                    <!-- 抽到的卡牌结果 -->
+                </div>
+                
+                <!-- 分享选项容器 -->
+                <div class="share-options" id="share-options">
+                    <button class="share-button" id="share-button" onclick="showShareOptions()">
+                        💝 分享这份祝福 💝
+                    </button>
+                </div>
+                
+                <!-- 分享方式选择 -->
+                <div class="share-methods" id="share-methods" style="display: none;">
+                    <button class="method-button" onclick="shareText()">
+                        📝 分享文字
+                    </button>
+                    <button class="method-button save-card-btn" onclick="saveCardImage()">
+                        🎴 保存卡牌图片
+                    </button>
+                    <button class="method-button back-btn" onclick="hideShareOptions()">
+                        ↩️ 返回
+                    </button>
+                </div>
+                
+                <button class="redraw-button" id="redraw-button" onclick="resetCard()">
+                    🔄 再抽一张
+                </button>
+            </div>
+        </main>
+
+        <!-- 底部说明 -->
+        <footer class="footer">
+            <p>每一份祝福都是最珍贵的礼物 ❤️</p>
+            <div class="hearts">
+                <span>💖</span>
+                <span>💕</span>
+                <span>💗</span>
+            </div>
+        </footer>
+    </div>
+
+    <!-- 粒子效果容器 -->
+    <div class="particles" id="particles"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
